@@ -1,0 +1,126 @@
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.hero {
+    position: relative;
+    margin-top: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    overflow: hidden;
+    animation: fadeIn 2s ease-out;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideUp 1.5s ease-out;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    clip-path: polygon(50% 0%, 100% 25%, 85% 100%, 15% 100%, 0% 25%);
+    border-radius: 20px;
+    opacity: 0.9;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    animation: pulse 3s infinite;
+}
+
+.hero::before {
+    content: "TECNOLOGÍA";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 15px #ffb600, 0 0 30px #ffb600, 0 0 45px #ffb600;
+    z-index: 0;
+    pointer-events: none;
+    animation: textGlow 2.5s infinite alternate;
+}
+
+.cta-btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 2;
+    margin-top: 20px;
+    animation: bounceIn 2s ease-out;
+}
+.cta-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 15px #ffb600, 0 0 30px #ffb600, 0 0 45px #ffb600;
+    }
+    to {
+        text-shadow: 0 0 30px #ffb600, 0 0 60px #ffb600, 0 0 90px #ffb600;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}

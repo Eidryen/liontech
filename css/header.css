@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.header {
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    border: 5px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #00ffcc, #ff00cc) border-box;
+}
+.logo a:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+    border: 5px solid;
+    border-image: linear-gradient(45deg, #00ffcc, #ff00cc) 1;
+    animation: rotateBorder 3s linear infinite;
+}
+
+@keyframes rotateBorder {
+    0% {
+        border-image: linear-gradient(45deg, #00ffcc, #ff00cc) 1;
+    }
+    100% {
+        border-image: linear-gradient(405deg, #00ffcc, #ff00cc) 1;
+    }
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    position: relative;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.nav a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all 0.4s ease;
+}
+.nav a:hover::before {
+    border-color: #00ffcc;
+    box-shadow: 0 0 15px #00ffcc, 0 0 20px #00ffcc inset;
+}
+.nav a:hover {
+    color: #00ffcc;
+    text-shadow: 0 0 8px #00ffcc;
+}
+
+.search input {
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: white;
+    transition: all 0.3s ease;
+}
+.search input:focus, .search input:hover {
+    outline: none;
+    border-color: #00ffcc;
+    box-shadow: 0 0 15px #00ffcc, 0 0 15px #00ffcc inset;
+    background-color: #262626;
+}
+
+.header {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
